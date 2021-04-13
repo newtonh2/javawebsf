@@ -1,6 +1,6 @@
-package model.categoria;
+package dao;
 
-import config.Conexao;
+import bean.Categoria;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -48,6 +48,16 @@ public class DAOCategoria {
         if (!rs.next()) valido = true;
 
         return valido;
+    }
+
+    public static String getNomeCategoria(int codCategoria) throws Exception {
+        String nomeCategoria = new String();
+        String sql = "select * from categorias where codigo =" + codCategoria ;
+        ResultSet rs = Conexao.getStatement().executeQuery(sql);
+        while (rs.next()) {
+            nomeCategoria = rs.getString(2);
+        }
+        return nomeCategoria;
     }
 
 
