@@ -1,6 +1,6 @@
 <%@ page import="java.util.List"%>
-<%@ page import="model.produto.DAOProduto"%>
-<%@ page import="model.produto.Produto"%>
+<%@ page import="dao.DAOProduto"%>
+<%@ page import="bean.Produto"%>
 <%@ page language="java" contentType="text/html;" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,11 +28,11 @@
         %>
         <tr>
             <td><%= produto.getCodigo() %></td>
-            <td><%= produto.getCategoriaFormatada() %></td>
+            <td><%= produto.getCategoriaFormatada(produto.getCodCategoria()) %></td>
             <td><%= produto.getNome() %></td>
             <td><%= produto.getDescricao() %></td>
-            <td><% out.print("<a href='alterar_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada() + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Alterar</a>"); %></td>
-            <td><% out.print("<a href='excluir_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada() + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Excluir</a>"); %></td>
+            <td><% out.print("<a href='alterar_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Alterar</a>"); %></td>
+            <td><% out.print("<a href='excluir_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Excluir</a>"); %></td>
         </tr>
         <%
             }

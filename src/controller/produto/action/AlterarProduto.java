@@ -1,6 +1,6 @@
 package controller.produto.action;
 
-import model.produto.DAOProduto;
+import dao.DAOProduto;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class AlterarProduto extends HttpServlet {
 
 			String n = request.getParameter("nome");
 
-			DAOProduto.alterarProduto(n, d, Integer.parseInt(request.getParameter("codigo")));
+			DAOProduto.alterarProduto(n, Integer.parseInt(request.getParameter("categoria")),d, Integer.parseInt(request.getParameter("codigo")));
 
 			response.setContentType("text/html; charset=iso-8859-1;");
 

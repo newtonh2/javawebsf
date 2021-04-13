@@ -1,4 +1,4 @@
-package model.categoria;
+package bean;
 
 public class Categoria {
 
@@ -7,6 +7,7 @@ public class Categoria {
 
 
     public int getCodigo() {
+
         return codigo;
     }
 

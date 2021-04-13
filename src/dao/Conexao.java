@@ -1,4 +1,4 @@
-package config;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,12 +25,16 @@ public class Conexao {
 	}
 
 	public static void migrarBanco() {
-        Flyway flyway = Flyway.configure()
-            .dataSource(url, usuario, senha)
-            .outOfOrder(true)
-            .baselineOnMigrate(true)
-            .ignoreFutureMigrations(false)
-            .load();
-        flyway.migrate();
+
+
+		Flyway flyway = Flyway.configure()
+				.dataSource(url, usuario, senha)
+				.outOfOrder(true)
+				.baselineOnMigrate(true)
+				.ignoreFutureMigrations(false)
+				.load();
+				flyway.migrate();
+
+
     }
 }

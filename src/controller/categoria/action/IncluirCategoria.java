@@ -1,6 +1,6 @@
 package controller.categoria.action;
 
-import model.categoria.DAOCategoria;
+import dao.DAOCategoria;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

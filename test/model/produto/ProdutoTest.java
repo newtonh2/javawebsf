@@ -1,4 +1,7 @@
-package model.produto;
+package model.produto;alert('Por favor, preencha o campo nome');
+			document.getElementById("nome").focus();
+			return false
+		}
 
 import static org.junit.Assert.*;
 import model.produto.Produto;

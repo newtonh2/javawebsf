@@ -1,6 +1,6 @@
 package listener;
 
-import config.Conexao;
+import dao.Conexao;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

@@ -56,6 +56,32 @@
     <servlet-name>ExcluirProdutoServlet</servlet-name>
     <url-pattern>/ExcluirProduto</url-pattern>
   </servlet-mapping>
+    <servlet>
+        <servlet-name>IncluirCategoriaServlet</servlet-name>
+        <servlet-class>controller.categoria.action.IncluirCategoria</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IncluirCategoriaServlet</servlet-name>
+        <url-pattern>/IncluirCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <servlet-name>AlterarCategoriaServlet</servlet-name>
+        <servlet-class>controller.categoria.action.AlterarCategoria</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarCategoriaServlet</servlet-name>
+        <url-pattern>/AlterarCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <servlet-name>ExcluirCategoriaServlet</servlet-name>
+        <servlet-class>controller.categoria.action.ExcluirCategoria</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExcluirCategoriaServlet</servlet-name>
+        <url-pattern>/ExcluirCategoria</url-pattern>
+    </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

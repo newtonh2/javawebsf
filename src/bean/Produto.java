@@ -1,19 +1,21 @@
-package model.produto;
+package bean;
+
+import static dao.DAOCategoria.getNomeCategoria;
 
 public class Produto {
 
 	private int codigo;
-	private int categoria;
+	private int codCategoria;
 	private String nome;
 	private String descricao;
 	
-	public int getCategoria() {
+	public int getCodCategoria() {
 
-		return categoria;
+		return codCategoria;
 	}
-	public void setCategoria(int categoria) {
+	public void setCodCategoria(int codCategoria) {
 
-		this.categoria = categoria;
+		this.codCategoria = codCategoria;
 	}
 	public String getDescricao() {
 
@@ -40,13 +42,13 @@ public class Produto {
 		return codigo;
 	}
 	
-	public String getCategoriaFormatada() {
-		if (categoria == 0) {
-			return "Informática";
-		} else if (categoria == 1) {
-			return "Eletrônica";
-		} else {
-			return "Imóvel";
+	public String getCategoriaFormatada(int codCategoria) {
+		String nomeCategoria = "";
+		try {
+			nomeCategoria = getNomeCategoria(codCategoria);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		return nomeCategoria;
 	}
 }

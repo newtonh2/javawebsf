@@ -1,6 +1,6 @@
 package controller.produto.action;
 
-import model.produto.DAOProduto;
+import dao.DAOProduto;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

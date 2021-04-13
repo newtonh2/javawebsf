@@ -1,6 +1,6 @@
 <%@ page import="java.util.List"%>
-<%@ page import="model.categoria.DAOCategoria"%>
-<%@ page import="model.categoria.Categoria"%>
+<%@ page import="dao.DAOCategoria"%>
+<%@ page import="bean.Categoria"%>
 <%@ page language="java" contentType="text/html;" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
