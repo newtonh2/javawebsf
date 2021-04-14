@@ -26,7 +26,6 @@ public class Conexao {
 
 	public static void migrarBanco() {
 
-
 		Flyway flyway = Flyway.configure()
 				.dataSource(url, usuario, senha)
 				.outOfOrder(true)
@@ -34,7 +33,5 @@ public class Conexao {
 				.ignoreFutureMigrations(false)
 				.load();
 				flyway.migrate();
-
-
     }
 }
