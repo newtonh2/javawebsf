@@ -17,11 +17,18 @@ public class IncluirProduto extends HttpServlet {
 			int cd = 0;
 			String categoria = request.getParameter("categoria");
 
-			if (DAOProduto.isNomeProdutoValido(n, cd)) {
+			if (n.trim().matches("")){
+				response.setContentType("text/html; charset=iso-8859-1;");
+				PrintWriter out = response.getWriter();
+				out.println("<html><head><title>Projeto Java Web</title></head><body>");
+				out.println("<h4>Atenção: Preencha o nome do produto</h4><a href='javascript:window.history.go(-1)'><input type='button' value='Voltar'></a>");
+				out.println("<a href='index.jsp'><input type='button' value='Tela Inicial'></a></body></html>");
+				out.close();
+
+			} else if (DAOProduto.isNomeProdutoValido(n, cd)) {
 				DAOProduto.incluirProduto(n, Integer.parseInt(categoria), request.getParameter("descricao"));
 			} else {
 				response.setContentType("text/html; charset=iso-8859-1;");
-
 				PrintWriter out = response.getWriter();
 				out.println("<html><head><title>Projeto Java Web</title></head><body>");
 				out.println("<h4>Atenção: Nome do produto já cadastrado</h4><a href='javascript:window.history.go(-1)'><input type='button' value='Voltar'></a>");
