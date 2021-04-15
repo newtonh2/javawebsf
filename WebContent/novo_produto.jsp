@@ -8,13 +8,21 @@
 <meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
 <link type="text/css" href="css/styles.css" rel="stylesheet" />
 <title>Novo Produto</title>
-
+	<script type="text/javascript" language="javascript">
+		function valida_form (){
+			if(document.getElementById("nome").value.length < 3){
+				alert('Por favor, preencha o campo nome');
+				document.getElementById("nome").focus();
+				return false
+			}
+		}
+	</script>
 </head>
 <body>
-	<form action="IncluirProduto">
+	<form action="IncluirProduto" onsubmit="return valida_form()">
 		<table width="550" border="0">
 			<tr>
-				<td align="right">Categoria:</td>
+				<td align="right" id="categoria">Categoria:</td>
 				<td>
 					<select name="categoria">
 						<%
@@ -32,11 +40,11 @@
 			</tr>
 			<tr>
 				<td align="right">Nome:</td>
-				<td><input type="text" name="nome"></td>
+				<td><input type="text" name="nome" id="nome"></td>
 			</tr>
 			<tr>
 				<td align="right">Descrição:</td>
-				<td><input type="text" name="descricao"></td>
+				<td><input type="text" name="descricao" id="descricao"></td>
 			</tr>
 			<tr>
 				<td></td>

@@ -69,3 +69,26 @@ th.specalt {
 	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	color: #797268;
 }
+/* formatacao dos div's adicionados */
+#tudo{
+	width:800px;
+	height:700px;
+	margin:auto auto;
+}
+
+#topo{
+	width:798px;
+	height:100px;
+	background-color: whitesmoke;
+	border: solid black 1px;
+	text-align: center;
+
+}
+
+#rodape{
+	width:798px;
+	height:106px;
+	background-color:#FFFF00;
+	clear:both;
+	border: solid black 1px;
+}
