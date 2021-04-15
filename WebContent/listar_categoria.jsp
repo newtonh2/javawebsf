@@ -10,37 +10,45 @@
     <title>Lista de Categorias</title>
 </head>
 <body>
-<table width="550" border="0">
+    <div id="tudo">
+        <div id="topo">
+            <%@include file="headerSite.jsp" %>
+        </div>
+        <table width="550" border="0">
 
-    <tr>
-        <td><b>Código</b></td>
-        <td><b>Nome</b></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <%
-        String dtString = null;
-        DAOCategoria dao = new DAOCategoria();
-        List<Categoria> lista = DAOCategoria.listarCategorias();
-        for(Categoria categoria : lista){
-    %>
-    <tr>
-        <td><%= categoria.getCodigo() %></td>
-        <td><%= categoria.getNome() %></td>
-        <td><% out.print("<a href='alterar_categoria.jsp?codigo=" + categoria.getCodigo() + "&nome=" + categoria.getNome() +  "'>Alterar</a>"); %></td>
-        <td><% out.print("<a href='excluir_categoria.jsp?codigo=" + categoria.getCodigo() + "&nome=" + categoria.getNome() +  "'>Excluir</a>"); %></td>
-    </tr>
-    <%
-        }
-    %>
-</table>
-<table width="550" border="0">
-    <tr>
-        <td align="center">
-            <a href="index.jsp"><input type="button" value="Tela Inicial"></a>
-            <a href="nova_categoria.jsp"><input type="button" value="Nova Categoria"></a>
-        </td>
-    </tr>
-</table>
+            <tr>
+                <td><b>Código</b></td>
+                <td><b>Nome</b></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <%
+                String dtString = null;
+                DAOCategoria dao = new DAOCategoria();
+                List<Categoria> lista = DAOCategoria.listarCategorias();
+                for(Categoria categoria : lista){
+            %>
+            <tr>
+                <td><%= categoria.getCodigo() %></td>
+                <td><%= categoria.getNome() %></td>
+                <td><% out.print("<a href='alterar_categoria.jsp?codigo=" + categoria.getCodigo() + "&nome=" + categoria.getNome() +  "'>Alterar</a>"); %></td>
+                <td><% out.print("<a href='excluir_categoria.jsp?codigo=" + categoria.getCodigo() + "&nome=" + categoria.getNome() +  "'>Excluir</a>"); %></td>
+            </tr>
+            <%
+                }
+            %>
+        </table>
+        <table width="550" border="0">
+            <tr>
+                <td align="center">
+                    <a href="index.jsp"><input type="button" value="Tela Inicial"></a>
+                    <a href="nova_categoria.jsp"><input type="button" value="Nova Categoria"></a>
+                </td>
+            </tr>
+        </table>
+        <div id="rodape">
+            <%@include file="footerSite.jsp"  %>
+        </div>
+    </div>
 </body>
 </html>

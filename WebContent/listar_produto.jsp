@@ -10,41 +10,48 @@
 <title>Lista de Produtos</title>
 </head>
 <body>
-	<table width="550" border="0">
-	
-     	<tr>
-            <td><b>Código</b></td>
-            <td><b>Categoria</b></td>
-            <td><b>Nome</b></td>
-            <td><b>Descrição</b></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <%
-        	String dtString = null;
-            DAOProduto dao = new DAOProduto();
-            List<Produto> lista = DAOProduto.listarProdutos();
-            for(Produto produto : lista){
-        %>
-        <tr>
-            <td><%= produto.getCodigo() %></td>
-            <td><%= produto.getCategoriaFormatada(produto.getCodCategoria()) %></td>
-            <td><%= produto.getNome() %></td>
-            <td><%= produto.getDescricao() %></td>
-            <td><% out.print("<a href='alterar_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Alterar</a>"); %></td>
-            <td><% out.print("<a href='excluir_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Excluir</a>"); %></td>
-        </tr>
-        <%
-            }
-        %>
-	</table>	
-	<table width="550" border="0">
-		<tr>
-			<td align="center">
-				<a href="index.jsp"><input type="button" value="Tela Inicial"></a>
-				<a href="novo_produto.jsp"><input type="button" value="Novo Produto"></a>
-			</td>
-		</tr>
-	</table>	
+    <div id="tudo">
+        <div id="topo">
+            <%@include file="headerSite.jsp" %>
+        </div>
+
+        <table width="550" border="0">
+
+            <tr>
+                <td><b>Código</b></td>
+                <td><b>Categoria</b></td>
+                <td><b>Nome</b></td>
+                <td><b>Descrição</b></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <%
+                String dtString = null;
+                DAOProduto dao = new DAOProduto();
+                List<Produto> lista = DAOProduto.listarProdutos();
+                for(Produto produto : lista){
+            %>
+            <tr>
+                <td><%= produto.getCodigo() %></td>
+                <td><%= produto.getCategoriaFormatada(produto.getCodCategoria()) %></td>
+                <td><%= produto.getNome() %></td>
+                <td><%= produto.getDescricao() %></td>
+                <td><% out.print("<a href='alterar_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Alterar</a>"); %></td>
+                <td><% out.print("<a href='excluir_produto.jsp?codigo=" + produto.getCodigo() + "&categoria=" + produto.getCategoriaFormatada(produto.getCodCategoria()) + "&nome=" + produto.getNome() + "&descricao=" + produto.getDescricao() + "'>Excluir</a>"); %></td>
+            </tr>
+            <%}%>
+        </table>
+        <table width="550" border="0">
+            <tr>
+                <td align="center">
+                    <a href="index.jsp"><input type="button" value="Tela Inicial"></a>
+                    <a href="novo_produto.jsp"><input type="button" value="Novo Produto"></a>
+                </td>
+            </tr>
+        </table>
+        <div id="rodape">
+            <%@include file="footerSite.jsp"  %>
+        </div>
+    </div>
 </body>
 </html>

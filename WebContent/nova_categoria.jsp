@@ -7,20 +7,28 @@
     <title>Nova Categoria</title>
 </head>
 <body>
-<form action="IncluirCategoria">
-    <table width="550" border="0">
-        <tr>
-            <td align="right">Nome:</td>
-            <td><input type="text" name="nome"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="left">
-                <input type="submit" value="Confirmar Inclusão">
-                <a href="listar_categoria.jsp"><input type="button" value="Cancelar"></a>
-            </td>
-        </tr>
-    </table>
-</form>
+    <div id="tudo">
+        <div id="topo">
+            <%@include file="headerSite.jsp" %>
+        </div>
+        <form action="IncluirCategoria">
+            <table width="550" border="0">
+                <tr>
+                    <td align="right">Nome:</td>
+                    <td><input type="text" name="nome"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <input type="submit" value="Confirmar Inclusão">
+                        <a href="listar_categoria.jsp"><input type="button" value="Cancelar"></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="rodape">
+            <%@include file="footerSite.jsp"  %>
+        </div>
+    </div>
 </body>
 </html>

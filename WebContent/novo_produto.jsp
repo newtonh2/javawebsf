@@ -19,41 +19,49 @@
 	</script>
 </head>
 <body>
-	<form action="IncluirProduto" onsubmit="return valida_form()">
-		<table width="550" border="0">
-			<tr>
-				<td align="right" id="categoria">Categoria:</td>
-				<td>
-					<select name="categoria">
-						<%
-							String dtString = null;
-							DAOCategoria dao = new DAOCategoria();
-							List<Categoria> lista = DAOCategoria.listarCategorias();
-							for(Categoria categoria : lista){
-						%>
-							<option value="<%= categoria.getCodigo() %>"><%= categoria.getNome() %></option>
-						<%
-							}
-						%>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Nome:</td>
-				<td><input type="text" name="nome" id="nome"></td>
-			</tr>
-			<tr>
-				<td align="right">Descrição:</td>
-				<td><input type="text" name="descricao" id="descricao"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td align="left">
-					<input type="submit" value="Confirmar Inclusão" >
-					<a href="listar_produto.jsp"><input type="button" value="Cancelar"></a>
-				</td>
-			</tr>
-		</table>
-	</form>
+	<div id="tudo">
+		<div id="topo">
+			<%@include file="headerSite.jsp" %>
+		</div>
+		<form action="IncluirProduto" onsubmit="return valida_form()">
+			<table width="550" border="0">
+				<tr>
+					<td align="right" id="categoria">Categoria:</td>
+					<td>
+						<select name="categoria">
+							<%
+								String dtString = null;
+								DAOCategoria dao = new DAOCategoria();
+								List<Categoria> lista = DAOCategoria.listarCategorias();
+								for(Categoria categoria : lista){
+							%>
+								<option value="<%= categoria.getCodigo() %>"><%= categoria.getNome() %></option>
+							<%
+								}
+							%>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Nome:</td>
+					<td><input type="text" name="nome" id="nome"></td>
+				</tr>
+				<tr>
+					<td align="right">Descrição:</td>
+					<td><input type="text" name="descricao" id="descricao"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left">
+						<input type="submit" value="Confirmar Inclusão" >
+						<a href="listar_produto.jsp"><input type="button" value="Cancelar"></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div id="rodape">
+			<%@include file="footerSite.jsp"  %>
+		</div>
+	</div>
 </body>
 </html>

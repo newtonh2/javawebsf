@@ -10,45 +10,53 @@
 <title>Alterar Produto</title>
 </head>
 <body>
-	<form action="AlterarProduto">
-		<table width="550" border="0">
-			<tr>
-				<td align="right">Código:</td>
-				<td><input type="text" name="codigo" value="<%=request.getParameter("codigo") %>" readonly="readonly"></td>
-			</tr>
-			<tr>
-				<td align="right">Categoria:</td>
-				<td>
-					<select name="categoria">
-						<%
-							String dtString = null;
-							DAOCategoria dao = new DAOCategoria();
-							List<Categoria> lista = DAOCategoria.listarCategorias();
-							for(Categoria categoria : lista){
-						%>
-						<option value="<%= categoria.getCodigo() %>"><%= categoria.getNome() %></option>
-						<%
-							}
-						%>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Nome:</td>
-				<td><input type="text" name="nome" value="<%=request.getParameter("nome") %>" readonly="readonly"></td>
-			</tr>
-			<tr>
-				<td align="right">Descrição:</td>
-				<td><input type="text" name="descricao" value="<%=request.getParameter("descricao") %>"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td align="left">
-					<input type="submit" value="Confirmar Alteração">
-					<a href="listar_produto.jsp"><input type="button" value="Cancelar"></a>
-				</td>
-			</tr>
-		</table>
-	</form>
+	<div id="tudo">
+		<div id="topo">
+			<%@include file="headerSite.jsp" %>
+		</div>
+		<form action="AlterarProduto">
+			<table width="550" border="0">
+				<tr>
+					<td align="right">Código:</td>
+					<td><input type="text" name="codigo" value="<%=request.getParameter("codigo") %>" readonly="readonly"></td>
+				</tr>
+				<tr>
+					<td align="right">Categoria:</td>
+					<td>
+						<select name="categoria">
+							<%
+								String dtString = null;
+								DAOCategoria dao = new DAOCategoria();
+								List<Categoria> lista = DAOCategoria.listarCategorias();
+								for(Categoria categoria : lista){
+							%>
+							<option value="<%= categoria.getCodigo() %>"><%= categoria.getNome() %></option>
+							<%
+								}
+							%>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Nome:</td>
+					<td><input type="text" name="nome" value="<%=request.getParameter("nome") %>" readonly="readonly"></td>
+				</tr>
+				<tr>
+					<td align="right">Descrição:</td>
+					<td><input type="text" name="descricao" value="<%=request.getParameter("descricao") %>"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="left">
+						<input type="submit" value="Confirmar Alteração">
+						<a href="listar_produto.jsp"><input type="button" value="Cancelar"></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div id="rodape">
+			<%@include file="footerSite.jsp"  %>
+		</div>
+	</div>
 </body>
 </html>
