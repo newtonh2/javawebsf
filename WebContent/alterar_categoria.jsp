@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td align="right">Nome:</td>
-                    <td><input type="text" name="nome" value="<%=request.getParameter("nome") %>" readonly="readonly"></td>
+                    <td><input type="text" name="nome" value="<%=request.getParameter("nome") %>" ></td>
                 </tr>
                 <tr>
                     <td></td>
